@@ -8,6 +8,7 @@ from django.core.management import CommandError, call_command
 from waffle.testutils import override_switch
 from openedx.core.djangoapps.credentials.models import CredentialsApiConfig
 
+
 @pytest.mark.django_db
 class CertAllowlistGenerationTests(TestCase):
     """
