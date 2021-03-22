@@ -1,3 +1,4 @@
+""" Command to create a credentials api configuration """
 from django.core.management.base import BaseCommand, CommandError
 from openedx.core.djangoapps.credentials.models import CredentialsApiConfig
 
@@ -9,6 +10,7 @@ class Command(BaseCommand):
     create a fully connected path to awarding program certificates in devstack.
     """
 
+    # pylint: disable=unused-argument
     def handle(self, *args, **kwargs):
         try:
             CredentialsApiConfig.objects.create(

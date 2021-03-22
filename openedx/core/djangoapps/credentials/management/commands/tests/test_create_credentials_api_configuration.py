@@ -2,10 +2,11 @@
 Tests for the create_credentials_api_configuration command
 """
 
-import pytest
 from unittest import TestCase
-from django.core.management import CommandError, call_command
-from waffle.testutils import override_switch
+
+import pytest
+from django.core.management import call_command
+
 from openedx.core.djangoapps.credentials.models import CredentialsApiConfig
 
 
