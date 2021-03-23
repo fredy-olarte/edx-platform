@@ -20,7 +20,13 @@ class CertAllowlistGenerationTests(TestCase):
     Tests for the create_credentials_api_configuration management command
     """
 
+    def setUp(self):
+        super().setUp()
+        CredentialsApiConfig.objects.create(
+            enabled=False
+        )
+
     @mock.patch(COMMAND_MODULE)
     def test_successful_generation(self, mock):
         call_command(Command())
-        assert len(CredentialsApiConfig.objects.all()) > 0
+        assert CredentialsApiConfig.objects.get(enabled=True)
